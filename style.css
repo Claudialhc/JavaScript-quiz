@@ -1,0 +1,40 @@
+/*this code belongs to all the pages background */
+body {
+    background-color: rgb(91, 182, 224);
+}
+
+/* this code helped get all the card to their appropriate size */
+.main {
+    padding: 60px 15px 0;
+}
+
+/* this is for the image in the about me section */
+#about-me-image {
+    width: 250px; 
+    float: left; 
+    margin-right: 10px;
+}
+/* this is to make the image responsive to the page */
+.img-fluid {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+/* this code belongs to the contact html */
+/* Added this to create a noticeable separation between the nav bar and the form */
+#contact-form {
+    width: 45%;
+    margin-top: 30px;
+    margin-left: 30px;
+    padding: 0px 15px 0;
+}
+
+
+/* this is for the sticky footer */
+.footer {
+    padding: 60px;
+    clear: both;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+}
+
