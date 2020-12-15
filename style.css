@@ -3,6 +3,10 @@ body {
     background-color: rgb(91, 182, 224);
 }
 
+.hide {
+    display: none;
+}
+
 /* this code helped get all the card to their appropriate size */
 .main {
     padding: 60px 15px 0;
