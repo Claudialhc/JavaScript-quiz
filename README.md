@@ -35,3 +35,34 @@ btn.addEventListener("click", function() {
 //creare a link to view highscores
 var stored = JSON.parse(localStorage.getItem("key"))
 console.log(stored)
+
+<!-- This is the code for the original timer -- >
+var timerInterval = setInterval(function() {
+    secondsLeft--;
+    timeEl.textContent = secondsLeft + " seconds left till end of quiz.";
+  
+    if(secondsLeft === 0) {
+      clearInterval(timerInterval);
+    };
+  
+    setTime();
+  });
+
+  var startBtn = document.querySelector("#btn")
+  var secondsLeft = 70;
+  
+  function startQuiz() { 
+  var timerInterval = setInterval(function() {
+      secondsLeft--;
+      if (counter >= 0) {
+        id = dociment.getElementById("#time")
+        id.innerHTML = secondsLeft;
+      } else if (counter < 0) {
+        clearInterval(timerInterval);
+        id = document.getElementById("#time");
+        id.innerHTML = timerInterval + 71;
+        timerInterval = 70;
+        alert("it works");
+      }
+    }, 1000)
+  }

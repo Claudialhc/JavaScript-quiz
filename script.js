@@ -2,11 +2,12 @@
 var qsEl = document.getElementById("question");
 var btn = document.getElementById("btn");
 var timeEl = document.querySelector(".time");
-var btnEl1 = document.getElementById("btn1")
-var btnEl2 = document.getElementById("btn2")
-var btnEl3 = document.getElementById("btn3")
-var btnEl4 = document.getElementById("btn4")
-var qsContainer = document.querySelector(".questionContainer")
+var btnEl1 = document.getElementById("btn1");
+var btnEl2 = document.getElementById("btn2");
+var btnEl3 = document.getElementById("btn3");
+var btnEl4 = document.getElementById("btn4");
+var qsContainer = document.querySelector(".questionContainer");
+var welcome = document.querySelector(".welcome");
 
 var questionsArray = [
   {
@@ -25,20 +26,18 @@ var questionsArray = [
     correct: "Strings",
   },
   {
-    question:
-      "Which of the following can you NOT log in the browser's console?",
+    question: "Which of the following can you NOT log in the browser's console?",
     answers: ["Strings", "Confirm", "Variables", "Even Equations"],
     correct: "Confirm",
   },
   {
-    question:
-      "JavaScript uses camel case as a practice for writing names of methods, variables, classes, packages and constants.",
+    question: "JavaScript uses camel case as a practice for writing names of methods, variables, classes, packages and constants.",
     answers: ["True", "False", "Maybe", "None of the above"],
     correct: "True",
   },
 ];
 
-//this timer is wrong figure out why.
+//this is the timer 
 var startBtn = document.querySelector("#btn");
 var secondsLeft = 70;
 
@@ -56,8 +55,12 @@ function startQuiz() {
 //increment this everytime somebody clicks on an answer button
 
 btn.addEventListener("click", function () {
+  // .remove("hide") was used to hide the answer buttons from the initial page.
   qsContainer.classList.remove("hide")
+  // .add("hide") used below is to hide the the "start button" from the actual questions
   btn.classList.add("hide")
+  // this .add("hide") is used to hide the introduction of the quiz after the "Start Quiz" button is pressed
+  welcome.classList.add("hide")
   qsEl.textContent = questionsArray[0].question;
   btnEl1.textContent = questionsArray[0].answers[0]
   btnEl2.textContent = questionsArray[0].answers[1]

@@ -24,7 +24,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <h3 class= "time">Timer</h3>
+            <h4 class= "time">Timer</h4>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="highScore.html">High Scores</a>
@@ -33,16 +33,20 @@
       </div>
     </nav>
     <main role="main" class="flex-shrink-0">
-      <!-- added card from bootstrap to create about me section -->
+      <!-- added card from bootstrap to create this box for the quiz questions and options to live on  -->
       <div class="container main">
   
-        <!-- added hr tag to show separaion between the title and the bio sections -->
+        <!-- added hr tag to show separaion between the title and the question/answer option sections -->
         <div class="row">
-          <div class="col-md-9 col-sm-12">
+          <div class="col-md-10 col-sm-12">
             <div class="card">
               <div class="card-body">
                 <h1 class="card-title"></h1>
+                <h3>JavaScript Quiz </h3>
                 <hr>
+                <div class="welcome"> Welcome to the JavaScript Quiz.
+                  <p>This quiz will put your JavaScript knowledge to the test. Think you are a master in JavaScript? I dare you to click the "Start quiz" button. Oh, did I mention you are playing against time? One false move and its O-V-E-R! Do you have what it takes to become a JavaScript master? I'll be the judge of that. </p> 
+                </div>
                 <div class= "questionContainer hide">
                   <h1 id="question"></h1>
                   <button id="btn1"></button>
@@ -51,7 +55,6 @@
                   <button id="btn4"></button>
                 </div> 
                 <button type="button" id="btn">Start Quiz</button>
-               
               </div>
             </div>
           </div>

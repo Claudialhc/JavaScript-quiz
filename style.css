@@ -3,6 +3,7 @@ body {
     background-color: rgb(91, 182, 224);
 }
 
+/* this is the class used on html to identify the hide feature to be able to hide the buttons through the js document. */
 .hide {
     display: none;
 }
