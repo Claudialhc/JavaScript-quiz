@@ -37,6 +37,10 @@ var questionsArray = [
   },
 ];
 
+
+
+var secondsLeft = 0; 
+
 //this is the timer 
 var startBtn = document.querySelector("#btn");
 var secondsLeft = 70;
@@ -45,13 +49,27 @@ function startQuiz() {
   var timerInterval = setInterval(function () {
     secondsLeft--;
     timeEl.textContent = secondsLeft + " seconds left till end of quiz.";
-
+    
+    
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
     }
   }, 1000);
 }
-//create a question index that will replace the 0 on lines 59 - 63 
+function minus() {
+  if (secondsLeft >= 5) {
+    timeEl.textContent = count;
+  } else {
+    clearInterval(timerInterval);
+    alert("quiz over here")
+  } 
+}
+function reset() {
+  secondsLeft = 70;
+  timeEl.textContent = "00";
+  clearInterval(timerInterval);
+}
+
 //increment this everytime somebody clicks on an answer button
 
 btn.addEventListener("click", function () {
@@ -69,6 +87,29 @@ btn.addEventListener("click", function () {
   //localStorage.setItem("key", JSON.stringify(questions));
   startQuiz();
 });
+
+btn.addEventListener("click", function () {
+  // .remove("hide") was used to hide the answer buttons from the initial page.
+  qsContainer.classList.remove("hide")
+  // .add("hide") used below is to hide the the "start button" from the actual questions
+  btn.classList.add("hide")
+  // this .add("hide") is used to hide the introduction of the quiz after the "Start Quiz" button is pressed
+  welcome.classList.add("hide")
+  qsEl.textContent = questionsArray[1].question;
+  btnEl1.textContent = questionsArray[1].answers[0]
+  btnEl2.textContent = questionsArray[1].answers[1]
+  btnEl3.textContent = questionsArray[1].answers[2]
+  btnEl4.textContent = questionsArray[1].answers[3]
+  //localStorage.setItem("key", JSON.stringify(questions));
+  startQuiz();
+});
+
+
+function showResults(){
+
+  //this will show results when user submits the quiz
+  btn.addEventListener("click", showResults);
+}
 //document.body.appendChild(h1El);
 //have a timer start & first question appear as soon as I click start button
 //have the timer live on the upper left corner of the screen
